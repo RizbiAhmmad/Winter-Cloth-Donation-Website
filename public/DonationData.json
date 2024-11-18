@@ -1,0 +1,93 @@
+[
+    {
+      "id": 1,
+      "title": "Winter Aid for Dhaka",
+      "image": "https://i.ibb.co.com/y5WgJdz/Donation-1.png",
+      "description": "Providing warm clothes for people in need across Dhaka city.",
+      "status": "Active",
+      "contactInfo": "contact@winterdonation.com",
+      "division": "Dhaka"
+    },
+    {
+      "id": 2,
+      "title": "Chittagong Winter Relief",
+      "image": "https://i.ibb.co.com/DQ5b16C/Donation-2.jpg",
+      "description": "Help the underprivileged in Chittagong with blankets and jackets.",
+      "status": "Active",
+      "contactInfo": "support@winterdonation.com",
+      "division": "Chittagong"
+    },
+    {
+      "id": 3,
+      "title": "Sylhet Warm Clothing Drive",
+      "image": "https://i.ibb.co.com/YBHNspS/Donation-3.png",
+      "description": "Donating warm clothes to the remote villages of Sylhet.",
+      "status": "Ongoing",
+      "contactInfo": "sylhet@winterdonation.com",
+      "division": "Sylhet"
+    },
+    {
+      "id": 4,
+      "title": "Rajshahi Blanket Distribution",
+      "image": "https://i.ibb.co.com/544Nt9j/Donation-4.jpg",
+      "description": "Distributing blankets to families affected by the cold wave in Rajshahi.",
+      "status": "Active",
+      "contactInfo": "rajshahi@winterdonation.com",
+      "division": "Rajshahi"
+    },
+    {
+      "id": 5,
+      "title": "Khulna Winter Clothing Campaign",
+      "image": "https://i.ibb.co.com/n7SR2Yq/Donation-5.jpg",
+      "description": "Supporting low-income families in Khulna with warm clothing donations.",
+      "status": "Active",
+      "contactInfo": "khulna@winterdonation.com",
+      "division": "Khulna"
+    },
+    {
+      "id": 6,
+      "title": "Barisal Community Help",
+      "image": "https://i.ibb.co.com/JyFNnkv/Donation-6.jpg",
+      "description": "Bringing warmth to vulnerable communities in Barisal during winter.",
+      "status": "Upcoming",
+      "contactInfo": "barisal@winterdonation.com",
+      "division": "Barisal"
+    },
+    {
+      "id": 7,
+      "title": "Mymensingh Winter Warmth Drive",
+      "image": "https://i.ibb.co.com/2nLJ5mh/Donation-7.jpg",
+      "description": "A campaign focused on delivering warm clothes to rural areas in Mymensingh.",
+      "status": "Active",
+      "contactInfo": "mymensingh@winterdonation.com",
+      "division": "Mymensingh"
+    },
+    {
+      "id": 8,
+      "title": "Rangpur Blanket Distribution",
+      "image": "https://i.ibb.co.com/54MDvHQ/Donation-8.jpg",
+      "description": "Distributing blankets to those in need during Rangpur's harsh winter.",
+      "status": "Completed",
+      "contactInfo": "rangpur@winterdonation.com",
+      "division": "Rangpur"
+    },
+    {
+      "id": 9,
+      "title": "Comilla Winter Assistance",
+      "image": "https://i.ibb.co.com/7yYWn1G/Donation-9.jpg",
+      "description": "Supporting underprivileged families in Comilla with warm clothing donations.",
+      "status": "Ongoing",
+      "contactInfo": "comilla@winterdonation.com",
+      "division": "Comilla"
+    },
+    {
+      "id": 10,
+      "title": "Gazipur Winter Relief",
+      "image": "https://i.ibb.co.com/RbFy5Yh/Donation-10.jpg",
+      "description": "Providing winter clothing to those in need in Gazipur.",
+      "status": "Active",
+      "contactInfo": "gazipur@winterdonation.com",
+      "division": "Gazipur"
+    }
+  ]
+  
