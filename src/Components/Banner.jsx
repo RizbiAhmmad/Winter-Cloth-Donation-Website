@@ -1,63 +1,10 @@
 import React from "react";
-import bannerImg1 from "../assets/Banner 1.jpg";
-import bannerImg2 from "../assets/Banner 4.jpg";
-import bannerImg3 from "../assets/Banner 7.jpg";
-import bannerImg4 from "../assets/Banner 5.jpg";
-
 import featuredImg1 from "../assets/Donation 2.jpeg"
 import featuredImg2 from "../assets/Donation 4.jpg"
 
 const Banner = () => {
   return (
     <>
-      {/* Carousel Section */}
-      <div className="carousel">
-        <div id="slide1" className="carousel-item relative w-full">
-          <img
-            src={bannerImg1}
-            className="w-full h-96 md:h-[100vh] object-cover bg-gray-200"
-            alt="Banner 1"
-          />
-          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-            <a href="#slide4" className="btn btn-circle">❮</a>
-            <a href="#slide2" className="btn btn-circle">❯</a>
-          </div>
-        </div>
-        <div id="slide2" className="carousel-item relative w-full">
-          <img
-            src={bannerImg2}
-            className="w-full h-96 md:h-[100vh] object-cover bg-gray-200"
-            alt="Banner 2"
-          />
-          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-            <a href="#slide1" className="btn btn-circle">❮</a>
-            <a href="#slide3" className="btn btn-circle">❯</a>
-          </div>
-        </div>
-        <div id="slide3" className="carousel-item relative w-full">
-          <img
-            src={bannerImg3}
-            className="w-full h-96 md:h-[100vh] object-cover bg-gray-200"
-            alt="Banner 3"
-          />
-          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-            <a href="#slide2" className="btn btn-circle">❮</a>
-            <a href="#slide4" className="btn btn-circle">❯</a>
-          </div>
-        </div>
-        <div id="slide4" className="carousel-item relative w-full">
-          <img
-            src={bannerImg4}
-            className="w-full h-96 md:h-[100vh] object-cover bg-gray-200"
-            alt="Banner 4"
-          />
-          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-            <a href="#slide3" className="btn btn-circle">❮</a>
-            <a href="#slide1" className="btn btn-circle">❯</a>
-          </div>
-        </div>
-      </div>
-
       {/* About Section */}
       <section className="bg-base-200 py-10">
         <div className="container mx-auto text-center">
