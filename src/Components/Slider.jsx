@@ -32,35 +32,35 @@ const Slider = () => {
     >
       <SwiperSlide>
         <img
-          className="md:h-[800px] w-full object-cover rounded-3xl"
-          src={bannerImg1}
+          className="md:h-[700px] w-full object-cover rounded-3xl"
+          src='https://media.istockphoto.com/id/1283154274/photo/woman-holding-cardboard-donation-box-full-with-folded-clothes.jpg?s=612x612&w=0&k=20&c=bqJFhv_hRXV3Milqrmuh54eyIiScjgqP6z0iwnnT84I='
           alt=""
         />
       </SwiperSlide>
       <SwiperSlide>
         <img
-          className="md:h-[800px] w-full object-cover rounded-3xl"
-          src={bannerImg2}
+          className="md:h-[700px] w-full object-cover rounded-3xl"
+          src='https://northboundgear.co/cdn/shop/articles/Screen_Shot_2022-03-22_at_14.08.05.png?v=1647954506'
           alt=""
         />
       </SwiperSlide>
       <SwiperSlide>
         <img
-          className="md:h-[800px] w-full object-cover rounded-3xl"
+          className="md:h-[700px] w-full object-cover rounded-3xl"
           src={bannerImg3}
           alt=""
         />
       </SwiperSlide>
       <SwiperSlide>
         <img
-          className="md:h-[800px] w-full object-cover rounded-3xl"
+          className="md:h-[700px] w-full object-cover rounded-3xl"
           src={bannerImg4}
           alt=""
         />
       </SwiperSlide>
       <SwiperSlide>
         <img
-          className="md:h-[800px] w-full object-cover rounded-3xl"
+          className="md:h-[700px] w-full object-cover rounded-3xl"
           src={bannerImg5}
           alt=""
         />

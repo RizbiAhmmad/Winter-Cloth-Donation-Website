@@ -1,12 +1,17 @@
 import React, { useState, useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Login = () => {
-  const { signIn, setUser } = useContext(AuthContext); // Access AuthContext functions
-  const [error, setError] = useState(""); // For error handling
-  const [loading, setLoading] = useState(false); // Loading state for UI
+  const { signIn, setUser, googleSignIn } = useContext(AuthContext);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from || "/";
 
   useEffect(() => {
     document.title = "WinterDonation | Login";
@@ -14,23 +19,34 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setError(""); // Reset error message
-
-    const form = new FormData(e.target);
-    const email = form.get("email");
-    const password = form.get("password");
+    setError("");
 
     setLoading(true);
     signIn(email, password)
       .then((result) => {
-        setUser(result.user); // Set user in context
-        navigate("/dashboard"); // Redirect to dashboard
+        setUser(result.user);
+        navigate(from, { replace: true });
       })
       .catch((err) => {
-        setError(err.message); // Set error message
+        setError(err.message);
       })
       .finally(() => {
-        setLoading(false); // Stop loading spinner
+        setLoading(false);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    setLoading(true);
+    googleSignIn()
+      .then((result) => {
+        setUser(result.user);
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        setError(err.message);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 
@@ -50,6 +66,8 @@ const Login = () => {
               id="email"
               className="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:ring-blue-200"
               placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)} // Store email in state
               required
             />
           </div>
@@ -65,6 +83,8 @@ const Login = () => {
               id="password"
               className="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:ring-blue-200"
               placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)} // Store password in state
               required
             />
           </div>
@@ -87,6 +107,40 @@ const Login = () => {
             {loading ? "Logging in..." : "Login"}
           </button>
         </form>
+
+        {/* Google Login Button */}
+        <div className="text-center mt-4">
+          <button
+            onClick={handleGoogleSignIn}
+            className="w-full bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition duration-200"
+            disabled={loading}
+          >
+            {loading ? "Logging in with Google..." : "Login with Google"}
+          </button>
+        </div>
+
+        {/* Forgot Password Link */}
+        <div className="text-center mt-4">
+          <p className="text-sm text-gray-600">
+            Forgot your password?{" "}
+            <Link
+              to={{ pathname: "/forgot-password", state: { email: email } }} // Pass email from state
+              className="text-blue-500 hover:underline"
+            >
+              Reset it here
+            </Link>
+          </p>
+        </div>
+
+        {/* Registration Prompt */}
+        <div className="text-center mt-4">
+          <p className="text-sm text-gray-600">
+            Don't have an account?{" "}
+            <Link to="/register" className="text-blue-500 hover:underline">
+              Register here
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );

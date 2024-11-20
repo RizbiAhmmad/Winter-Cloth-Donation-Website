@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 
-const Dashboard = () => {
+const MyProfile = () => {
   const { user, updateUserProfile, setUser } = useContext(AuthContext);
   const [name, setName] = useState(user?.displayName || "");
   const [photoURL, setPhotoURL] = useState(user?.photoURL || "");
@@ -113,4 +113,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default MyProfile;

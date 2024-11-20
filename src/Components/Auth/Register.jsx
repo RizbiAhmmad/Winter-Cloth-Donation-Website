@@ -13,6 +13,15 @@ const Register = () => {
     document.title = "Title | Register";
   }, []);
 
+  const validatePassword = (password) => {
+    // Check if the password contains at least one uppercase letter, one lowercase letter, and is at least 6 characters long
+    const uppercase = /[A-Z]/.test(password);
+    const lowercase = /[a-z]/.test(password);
+    const length = password.length >= 6;
+
+    return uppercase && lowercase && length;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setError({});
@@ -23,11 +32,22 @@ const Register = () => {
     const photo = form.get("photo") || "https://default-photo-url.com";
     const password = form.get("password");
 
+    // Validate name length
     if (name.length < 2) {
       setError({ name: "Name must be more than 2 characters" });
       return;
     }
 
+    // Validate password
+    if (!validatePassword(password)) {
+      setError({
+        password:
+          "Password must have at least 6 characters, one uppercase letter, and one lowercase letter",
+      });
+      return;
+    }
+
+    // Proceed with creating user if validation passes
     createNewUser(email, password)
       .then((result) => {
         const user = result.user;
@@ -106,6 +126,27 @@ const Register = () => {
               </div>
             </div>
           </div>
+
+          {/* Display password validation error */}
+          {error.password && (
+            <div className="text-red-500 text-sm mb-4">
+              <p>{error.password}</p>
+            </div>
+          )}
+
+          {/* Display other errors */}
+          {error.name && (
+            <div className="text-red-500 text-sm mb-4">
+              <p>{error.name}</p>
+            </div>
+          )}
+
+          {/* Display registration error */}
+          {error.register && (
+            <div className="text-red-500 text-sm mb-4">
+              <p>{error.register}</p>
+            </div>
+          )}
 
           <button
             type="submit"

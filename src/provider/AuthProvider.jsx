@@ -1,14 +1,13 @@
 import React, { createContext, useState, useEffect } from "react";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signOut, updateProfile } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile, signInWithPopup, GoogleAuthProvider, sendPasswordResetEmail } from "firebase/auth";
 import app from "../Firebase/firebase.config";
-import { signInWithEmailAndPassword } from "firebase/auth";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true); // Loading state to track authentication status
+  const [loading, setLoading] = useState(true);
 
   const createNewUser = (email, password) => {
     setLoading(true);
@@ -31,6 +30,12 @@ const AuthProvider = ({ children }) => {
     return Promise.reject(new Error("No user is currently logged in"));
   };
 
+  // Google Sign In
+  const googleSignIn = () => {
+    const provider = new GoogleAuthProvider();
+    return signInWithPopup(auth, provider);
+  };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -40,6 +45,10 @@ const AuthProvider = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
+  const resetPassword = (email) => {
+    return sendPasswordResetEmail(auth, email);
+  };
+
   const authInfo = {
     user,
     setUser,
@@ -48,6 +57,8 @@ const AuthProvider = ({ children }) => {
     logOut,
     updateUserProfile,
     signIn,
+    googleSignIn,
+    resetPassword // Add the googleSignIn function to the context
   };
 
   return (
