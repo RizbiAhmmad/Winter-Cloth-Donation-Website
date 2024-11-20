@@ -5,6 +5,9 @@ import Dashboard from "../Components/Dashboard";
 import Camp from "../Components/Camp";
 import HowToHelp from "../Components/howToHelp";
 import Details from "../Components/Details";
+import Login from "../Components/Auth/Login";
+import Register from "../Components/Auth/Register";
+
 
 
 const router = createBrowserRouter([
@@ -42,8 +45,20 @@ const router = createBrowserRouter([
               
                 return singleData
  
-            }
-           }
+            },
+            
+           },
+           {
+            path: "/login",
+            element: <Login></Login>
+ 
+           },
+           {
+            path: "/register",
+            element: <Register></Register>
+ 
+           },
+
           
         ]
     }
