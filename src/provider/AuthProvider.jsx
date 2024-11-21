@@ -58,7 +58,7 @@ const AuthProvider = ({ children }) => {
     updateUserProfile,
     signIn,
     googleSignIn,
-    resetPassword // Add the googleSignIn function to the context
+    resetPassword 
   };
 
   return (

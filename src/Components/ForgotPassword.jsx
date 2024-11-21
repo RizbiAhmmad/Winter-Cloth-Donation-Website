@@ -13,7 +13,6 @@ const ForgotPassword = () => {
     document.title = "DreamTrack | Forgot Password"; 
   }, []);
 
-  // Pre-fill email from location state if available
   const prefillEmail = location?.state?.email || "";
   React.useEffect(() => {
     if (prefillEmail) setEmail(prefillEmail);
@@ -23,21 +22,18 @@ const ForgotPassword = () => {
     e.preventDefault();
     const auth = getAuth();
 
-    // Reset previous error message if any
     setError("");
     setMessage("");
 
-    // Ensure email is entered
     if (!email) {
       setError("Please enter a valid email address.");
       return;
     }
 
-    // Send password reset email via Firebase
     sendPasswordResetEmail(auth, email)
       .then(() => {
         setMessage("Password reset email sent successfully!");
-        // Redirect to Gmail after successful reset email
+
         setTimeout(() => {
           window.open("https://mail.google.com", "_blank");
         }, 2000);

@@ -67,7 +67,7 @@ const Login = () => {
               className="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:ring-blue-200"
               placeholder="Enter your email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)} // Store email in state
+              onChange={(e) => setEmail(e.target.value)} 
               required
             />
           </div>
@@ -84,7 +84,7 @@ const Login = () => {
               className="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:ring-blue-200"
               placeholder="Enter your password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)} // Store password in state
+              onChange={(e) => setPassword(e.target.value)} 
               required
             />
           </div>
@@ -124,7 +124,7 @@ const Login = () => {
           <p className="text-sm text-gray-600">
             Forgot your password?{" "}
             <Link
-              to={{ pathname: "/forgot-password", state: { email: email } }} // Pass email from state
+              to={{ pathname: "/forgot-password", state: { email: email } }} 
               className="text-blue-500 hover:underline"
             >
               Reset it here

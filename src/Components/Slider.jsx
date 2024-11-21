@@ -24,8 +24,8 @@ const Slider = () => {
       mousewheel={true}
       keyboard={true}
       autoplay={{
-        delay: 3000, // Time in milliseconds (3 seconds)
-        disableOnInteraction: false, // Keep autoplay running even after user interaction
+        delay: 3000, 
+        disableOnInteraction: false, 
       }}
       modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
       className="mySwiper"

@@ -14,7 +14,7 @@ const Register = () => {
   }, []);
 
   const validatePassword = (password) => {
-    // Check if the password contains at least one uppercase letter, one lowercase letter, and is at least 6 characters long
+    
     const uppercase = /[A-Z]/.test(password);
     const lowercase = /[a-z]/.test(password);
     const length = password.length >= 6;
@@ -32,13 +32,13 @@ const Register = () => {
     const photo = form.get("photo") || "https://default-photo-url.com";
     const password = form.get("password");
 
-    // Validate name length
+    
     if (name.length < 2) {
       setError({ name: "Name must be more than 2 characters" });
       return;
     }
 
-    // Validate password
+    
     if (!validatePassword(password)) {
       setError({
         password:
@@ -47,7 +47,7 @@ const Register = () => {
       return;
     }
 
-    // Proceed with creating user if validation passes
+    
     createNewUser(email, password)
       .then((result) => {
         const user = result.user;
