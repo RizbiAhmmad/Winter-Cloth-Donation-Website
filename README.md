@@ -10,7 +10,7 @@ The purpose of WinterDonation is to simplify the process of donating essential i
 ---
 
 ## Live URL
-Visit the live application: [WinterDonation Netlify Live Site](https://rizbi-a9-winter-donation.netlify.app/)
+Visit the live application: [WinterDonation Live Site](https://winter-cloth-donation-a946e.firebaseapp.com/)
 
 ---
 
