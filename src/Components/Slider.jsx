@@ -3,9 +3,9 @@ import React from 'react';
 const Slider = () => {
   return (
     <div
-      className="relative h-[500px] md:h-[700px] w-full bg-cover bg-center rounded-3xl overflow-hidden"
+      className="relative h-[500px] md:h-[700px] w-full bg-contain bg-no-repeat bg-center rounded-3xl overflow-hidden"
       style={{
-        backgroundImage: `url('https://www.shutterstock.com/image-vector/clothes-donation-those-need-flat-600nw-2264436335.jpg')`,
+        backgroundImage: `url('https://cdn.vectorstock.com/i/500p/30/08/donations-sign-over-cut-ribbon-confetti-background-vector-48293008.jpg')`,
       }}
     >
       {/* Optional Overlay */}
